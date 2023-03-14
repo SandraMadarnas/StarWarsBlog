@@ -1,3 +1,16 @@
 /* 
     General Styles
 */
+body {
+  background-color: black;
+  color: white;
+}
+
+.logo {
+  height: 7rem;
+  width: 7rem;
+}
+
+.card-sw {
+    width: 18rem;
+}
