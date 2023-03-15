@@ -2,7 +2,7 @@ import React from "react";
 
 const CardDetails = ({ peopleProperties }) => {
     return (
-        <div className="card card-details bg-dark mb-3">
+        <div className="card bg-dark mb-3">
             {peopleProperties.map((properties, index) => (
                 <div key={index} className="row g-0">
                     <div className="col-md-4">
@@ -20,19 +20,19 @@ const CardDetails = ({ peopleProperties }) => {
                                         <p>Name: </p><p>{properties.name}</p>
                                     </div>
                                     <div className="col">
-                                    <p>Birth Year: </p><p>{properties.birth_year}</p>
+                                        <p>Birth Year: </p><p>{properties.birth_year}</p>
                                     </div>
                                     <div className="col">
-                                    <p>Gender: </p><p>{properties.gender}</p>
+                                        <p>Gender: </p><p>{properties.gender}</p>
                                     </div>
                                     <div className="col">
-                                    <p>Height: </p><p>{properties.height}</p>
+                                        <p>Height: </p><p>{properties.height}</p>
                                     </div>
                                     <div className="col">
-                                    <p>Skin Color: </p><p>{properties.skin_color}</p>
+                                        <p>Skin Color: </p><p>{properties.skin_color}</p>
                                     </div>
                                     <div className="col">
-                                    <p>Eye Color: </p><p>{properties.eye_color}</p>
+                                        <p>Eye Color: </p><p>{properties.eye_color}</p>
                                     </div>
                                 </div>
                             </div>

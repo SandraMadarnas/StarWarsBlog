@@ -43,23 +43,12 @@ export const Home = () => {
 
   return (
     <>
-      <div className="container card-container">
-        <div className="row">
-          <h2>Characters</h2>
-          <Card people={people} />
-        </div>
-        <div className="container">
-          <div className="row">
-            <h2>Vehicles</h2>
-            <CardDetails peopleProperties={propertiesList} />
-          </div>
-        </div>
-
-        <div className="row">
-          <h2>Carrusel</h2>
-          <CarrouselCard />
-        </div>
-      </div>
+      <h2>Characters</h2>
+      <Card people={people} />
+      <h2>Details</h2>
+      <CardDetails peopleProperties={propertiesList} />
+      <h2>Carrusel</h2>
+      <CarrouselCard />
     </>
   );
 };

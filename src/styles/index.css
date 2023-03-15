@@ -2,34 +2,26 @@
     General Styles
 */
 body {
+  background: url("https://cdn.pixabay.com/photo/2015/09/29/15/12/stars-964022_960_720.png")
+    no-repeat center center fixed;
   background-color: black;
   color: white;
+  perspective: 1000px;
 }
 
 .logo {
   height: 7rem;
-  /* padding-left: 2rem; */
-  /* width: 10rem; */
-}
-
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .card-sw {
-  width: 25rem;
+  width: 70rem;
   padding: 2rem;
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
   margin-right: 10px;
 }
 
-.card-details {
-  /* max-width: 540px; */
-}
-
 .div-red {
-color: red;
-border-top: solid 3px red;
+  color: red;
+  border-top: solid 3px red;
 }
