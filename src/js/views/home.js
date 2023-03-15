@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../../styles/home.css";
 import Card from "../component/Card.jsx";
+import CardDetails from "../component/CardDetails.jsx";
 
 export const Home = () => {
   const [people, setPeople] = useState([]);
@@ -16,20 +17,21 @@ export const Home = () => {
       .catch((err) => console.error(err));
   };
 
-  //   const getPeopleProperties = () => {
-  //     const characterProperties = people.map((character) => {
-  //       fetch(`https://www.swapi.tech/api/people/${character.uid}`)
-  //         .then((res) => res.json())
-  //         .then((data) => {
-  //           setPeopleProperties([...peopleProperties, data.result.properties]);
-  //         })
-  //         .catch((err) => console.error(err));
-  //     });
-  //     return characterProperties;
-  //   };
+  const getPeopleProperties = () => {
+    const characterProperties = people.map((peopleProperties) => {
+      fetch(`https://www.swapi.tech/api/people/${cpeopleProperties.uid}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setPeopleProperties([...peopleProperties, data.result.properties]);
+        })
+        .catch((err) => console.error(err));
+    });
+    return characterProperties;
+  };
 
   useEffect(() => {
     getPeople();
+    getPeopleProperties();
   }, []);
 
   //   setTimeout(() => {
@@ -40,9 +42,15 @@ export const Home = () => {
   console.log(people);
 
   return (
-    <div className="container text-center mt-5">
-      <h2>Characters</h2>
-      <Card />
+    <div className="container">
+      <div className="row">
+        <h2>Characters</h2>
+        <Card people={people} />
+      </div>
+      <div className="row">
+      <h2>Vehicles</h2>
+        <CardDetails peopleProperties={peopleProperties} />
+      </div>
     </div>
   );
 };

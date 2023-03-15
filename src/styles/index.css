@@ -8,9 +8,22 @@ body {
 
 .logo {
   height: 7rem;
-  width: 7rem;
+  /* padding-left: 2rem; */
+  /* width: 10rem; */
 }
 
 .card-sw {
-    width: 18rem;
+  width: 25rem;
+  padding: 2rem;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+}
+
+.card-details {
+  /* max-width: 540px; */
+}
+
+.div-red {
+color: red;
+border-top: solid 3px red;
 }
