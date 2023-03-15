@@ -14,25 +14,25 @@ const CardDetails = ({ peopleProperties }) => {
                             <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
                                 This content is a little bit longer. This is a wider card with supporting text below as a natural lead-in to
                                 additional content. This content is a little bit longer.</p>
-                            <div class="container text-center div-red">
-                                <div class="row p-2">
-                                    <div class="col">
-                                        Name :{properties.name}
+                            <div className="container text-center div-red">
+                                <div className="row p-2">
+                                    <div className="col col-red">
+                                        <p>Name: </p><p>{properties.name}</p>
                                     </div>
-                                    <div class="col">
-                                        Birth Year
+                                    <div className="col">
+                                    <p>Birth Year: </p><p>{properties.birth_year}</p>
                                     </div>
-                                    <div class="col">
-                                        Gender
+                                    <div className="col">
+                                    <p>Gender: </p><p>{properties.gender}</p>
                                     </div>
-                                    <div class="col">
-                                        Height: {properties.height}
+                                    <div className="col">
+                                    <p>Height: </p><p>{properties.height}</p>
                                     </div>
-                                    <div class="col">
-                                        Skin Color
+                                    <div className="col">
+                                    <p>Skin Color: </p><p>{properties.skin_color}</p>
                                     </div>
-                                    <div class="col">
-                                        Eye Color: {properties.eye_color}
+                                    <div className="col">
+                                    <p>Eye Color: </p><p>{properties.eye_color}</p>
                                     </div>
                                 </div>
                             </div>
