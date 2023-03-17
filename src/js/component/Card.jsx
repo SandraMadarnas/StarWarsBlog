@@ -1,25 +1,42 @@
-import React, { useState } from "react";
+import React from "react";
 
+import Button from "../component/Button.jsx";
 
-const Card = ({ people }) => {
-    return (<>
-        <div className="card-sw">
-            {people.map((person) => (
-                <div key={person.uid} className="col-4">
-                    <img src={person.src ? person.uid : "https://lumiere-a.akamaihd.net/v1/images/4-3-rosw_c4c4312b.jpeg"}
-                        className="card-img-top" alt={person.title ? `Imagen de ${person.title}` : "Imagen de StarWars"} />
-                    <div className="card-body">
-                        <h5 className="card-title">{person.name}</h5>
-                        {person.gender ? <p className="card-text">Gender: {person.gender}</p> : null}
-                        {person.birth_year ? <p className="card-text">Birth year: {person.birth_year}</p> : null}
-                        <a href="#" className="btn btn-primary">Learn More!</a>
-                    </div>
-                </div>
-            ))
-            }
-        </div>
+const Card = ({ people, peopleProperties }) => {
+  return (
+    <>
+      <div className="card-sw">
+        {people.map((person, index) => (
+          <div key={person.uid} className="col m-2">
+            <img
+              src={`https://starwars-visualguide.com/assets/img/characters/${person.uid}.jpg`}
+              className="card-img-top"
+              alt="Imagen de StarWars"
+            />
+            <div className="card-body">
+              <h5 className="card-title">{person.name}</h5>
+              {peopleProperties[index] && (
+                <p className="card-text">
+                  Gender: {peopleProperties[index].gender}
+                </p>
+              )}
+              {peopleProperties[index] && (
+                <p className="card-text">
+                  Hair Color: {peopleProperties[index].hair_color}
+                </p>
+              )}
+              {peopleProperties[index] && (
+                <p className="card-text">
+                  Eye Color: {peopleProperties[index].eye_color}
+                </p>
+              )}
+              <Button uid={person.uid} />
+            </div>
+          </div>
+        ))}
+      </div>
     </>
-    );
+  );
 };
 
 

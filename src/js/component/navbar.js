@@ -19,9 +19,12 @@ export const Navbar = () => {
           </Link>
         </div>
       </nav>
-      <nav className="navbar navbar-dark bg-dark mb-3 p-4">
+      {/* <nav className="navbar navbar-dark bg-dark mb-3 p-4">
         <Link to="/characters">
           <h3>Characters</h3>
+        </Link>
+        <Link to="/films">
+          <h3>Films</h3>
         </Link>
         <Link to="/vehicles">
           <h3>Vehicles</h3>
@@ -29,7 +32,7 @@ export const Navbar = () => {
         <Link to="/planets">
           <h3>Planets</h3>
         </Link>
-      </nav>
+      </nav> */}
     </>
   );
 };

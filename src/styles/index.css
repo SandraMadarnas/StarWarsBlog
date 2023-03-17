@@ -4,24 +4,68 @@
 body {
   background: url("https://cdn.pixabay.com/photo/2015/09/29/15/12/stars-964022_960_720.png")
     no-repeat center center fixed;
+  background-size: cover;
   background-color: black;
   color: white;
   perspective: 1000px;
+}
+
+a {
+  color: yellow;
+  text-decoration: none;
+}
+
+a:hover {
+  color: honeydew;
 }
 
 .logo {
   height: 7rem;
 }
 
+.card-container {
+  min-width: 18vw;
+  overflow-y: scroll;
+  margin-inline: 3vw;
+}
 .card-sw {
-  width: 70rem;
-  padding: 2rem;
   display: flex;
   flex-direction: row;
-  margin-right: 10px;
+  width: 18vw;
+  min-width: 18vw;
+  margin-inline: 3vw;
+  margin-bottom: 2vh;
 }
 
 .div-red {
   color: red;
   border-top: solid 3px red;
+}
+
+/* Button */
+
+.btn-wide {
+  width: 250px;
+  height: 60px;
+  margin: 10px;
+  border-radius: 50px;
+  font-size: 18px;
+  color: #708090;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-normal {
+  box-shadow: -3px -3px 7px #f5f5f5, 3px 3px 7px #bbc3cc;
+}
+
+.btn-pressed {
+  box-shadow: -3px -3px 7px #f5f5f5 inset, 3px 3px 7px #bbc3cc inset;
+}
+
+.btn-normal:active {
+  box-shadow: -3px -3px 7px #f5f5f5 inset, 3px 3px 7px #bbc3cc inset;
+  font-size: 16px;
+  user-select: none;
 }
