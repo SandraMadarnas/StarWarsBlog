@@ -12,32 +12,28 @@ export const Navbar = () => {
           />
         </Link>
         <div className="ml-auto">
+          <Link to="/">
+            <button className="btn btn-warning m-2">
+              Home <i className="fas fa-home"></i>
+            </button>
+          </Link>
+          <Link to="/">
+            <button className="btn btn-warning m-2">
+              Planets <i className="fas fa-globe"></i>
+            </button>
+          </Link>
+          <Link to="/">
+            <button className="btn btn-warning m-2">
+              Vehicles <i className="fas fa-space-shuttle"></i>
+            </button>
+          </Link>
+
           <Link to="/demo">
-            <button className="btn btn-warning">
+            <button className="btn btn-warning m-2">
               Favorites <i className="fa fa-heart text-danger" />{" "}
             </button>
           </Link>
         </div>
-      </nav>
-      <nav className="navbar navbar-dark bg-dark mb-3 p-4">
-      <Link to="/">
-          <h3>Home</h3>
-        </Link>
-        <Link to="/characters">
-          <h3>Characters</h3>
-        </Link>
-        <Link to="/card-details">
-          <h3>Characters Details</h3>
-        </Link>
-        <Link to="/films">
-          <h3>Films</h3>
-        </Link>
-        <Link to="/vehicles">
-          <h3>Vehicles</h3>
-        </Link>
-        <Link to="/planets">
-          <h3>Planets</h3>
-        </Link>
       </nav>
     </>
   );

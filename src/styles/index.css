@@ -11,7 +11,7 @@ body {
 }
 
 a {
-  color: yellow;
+  color: #ffc107;
   text-decoration: none;
 }
 
@@ -24,16 +24,17 @@ a:hover {
 }
 
 .card-container {
-  min-width: 18vw;
+  min-width: 10vw;
   overflow-y: scroll;
   margin-inline: 3vw;
 }
+
 .card-sw {
   display: flex;
   flex-direction: row;
-  width: 18vw;
+  width: 10vw;
   min-width: 18vw;
-  margin-inline: 3vw;
+  /* margin-inline: 3vw; */
   margin-bottom: 2vh;
 }
 

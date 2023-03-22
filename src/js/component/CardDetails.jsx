@@ -1,7 +1,7 @@
 import React from "react";
 
 const CardDetails = ({ properties }) => {
-    console.log(properties);
+
     return (
         <div className="card bg-dark p-4 mb-3">
             <div className="row g-0">

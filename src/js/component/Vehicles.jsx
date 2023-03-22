@@ -1,30 +1,38 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-const Vehicles = () => {
-  const [vehicle, setVehicle] = useState(null);
-
-  useEffect(() => {
-    fetch("https://www.swapi.tech/api/vehicles/4")
-      .then((res) => res.json())
-      .then((data) => {
-        setVehicle(data.result.properties);
-      })
-      .catch((err) => console.error(err));
-  }, []);
+const Vehicles = ({ vehicles, vehiclesProperties }) => {
+console.log(vehicles);
 
   return (
-    <div className="bg-dark p-4">
-      <h3>Vehicle Details</h3>
-      {vehicle && (
-        <ul>
-          <li>Name: {vehicle.name}</li>
-          <li>Model: {vehicle.model}</li>
-          <li>Manufacturer: {vehicle.manufacturer}</li>
-          <li>Class: {vehicle.vehicle_class}</li>
-        </ul>
-      )}
-    </div>
+    <>
+      <div className="card-sw">
+        {vehicles.map((vehicle, index) => (
+          <div key={vehicle.uid} className="col m-2">
+            <img
+              src={`https://starwars-visualguide.com/assets/img/characters/${vehicle.uid}.jpg`}
+              className="card-img-top"
+              alt="Imagen de StarWars-Vehicles"
+            />
+            <div className="card-body">
+              <h5 className="card-title">{vehicle.name}</h5>
+              {vehiclesProperties[index] && (
+                <p className="card-text">
+                  Model: {vehiclesProperties[index].model}
+                </p>
+              )}
+              {vehiclesProperties[index] && (
+                <p className="card-text">
+                  Manufacturer: {vehiclesProperties[index].manufacturer}
+                </p>
+              )}
+            </div>
+          </div>
+        ))}
+
+      </div>
+    </>
   );
 };
+
 
 export default Vehicles;

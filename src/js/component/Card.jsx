@@ -6,7 +6,8 @@ const Card = ({ people, peopleProperties }) => {
   return (
     <>
       <div className="card-sw">
-        {people.map((person, index) => (
+        {people.map((person, index) => {
+          return
           <div key={person.uid} className="col m-2">
             <img
               src={`https://starwars-visualguide.com/assets/img/characters/${person.uid}.jpg`}
@@ -33,7 +34,7 @@ const Card = ({ people, peopleProperties }) => {
               <Button uid={person.uid} />
             </div>
           </div>
-        ))}
+        })}
       </div>
     </>
   );
