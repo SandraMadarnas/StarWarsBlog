@@ -19,15 +19,14 @@ export const Navbar = () => {
           </Link>
           <Link to="/">
             <button className="btn btn-warning m-2">
-              Planets <i className="fas fa-globe"></i>
+              Vehicles <i className="fas fa-space-shuttle"></i>
             </button>
           </Link>
           <Link to="/">
             <button className="btn btn-warning m-2">
-              Vehicles <i className="fas fa-space-shuttle"></i>
+              Planets <i className="fas fa-globe"></i>
             </button>
           </Link>
-
           <Link to="/demo">
             <button className="btn btn-warning m-2">
               Favorites <i className="fa fa-heart text-danger" />{" "}

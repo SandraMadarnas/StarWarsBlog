@@ -5,10 +5,10 @@ const contexto = createContext();
 const ContextProvider = ({ children }) => {
   const [people, setPeople] = useState([]);
   const [peopleProperties, setPeopleProperties] = useState([]);
-  const [propertiesList, setPropertiesList] = useState([]);
-  // const [vehicles, setVehicles] = useState([]);
-  // const [vehiclesProperties, setVehiclesProperties] = useState([]);
-  // const [vehiclesList, setVehiclesList] = useState([]);
+  const [vehicles, setVehicles] = useState([]);
+  const [vehiclesProperties, setVehiclesProperties] = useState([]);
+  const [planets, setPlanets] = useState([]);
+  const [planetsProperties, setPlanetsProperties] = useState([]);
 
   const getPeople = () => {
     fetch("https://www.swapi.tech/api/people")
@@ -20,7 +20,7 @@ const ContextProvider = ({ children }) => {
   };
 
   const getPeopleProperties = () => {
-    const propertiesList = people.map((peopleProperties) => {
+    const promises = people.map((peopleProperties) => {
       return fetch(`https://www.swapi.tech/api/people/${peopleProperties.uid}`)
         .then((res) => res.json())
         .then((data) => {
@@ -29,63 +29,92 @@ const ContextProvider = ({ children }) => {
         .catch((err) => console.error(err));
     });
 
-    Promise.all(propertiesList).then((values) => {
-      console.log(values);
-      setPropertiesList(values);
+    Promise.all(promises).then((values) => {
+      setPeopleProperties(values);
     });
   };
 
+  const getVehicles = () => {
+    fetch("https://www.swapi.tech/api/vehicles")
+      .then((res) => res.json())
+      .then((data) => {
+        setVehicles(data.results);
+      })
+      .catch((err) => console.error(err));
+  };
 
-  // const getVehicles = () => {
-  //   fetch("https://www.swapi.tech/api/vehicles")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setVehicles(data.results);
-  //       console.log("Vehicles:", values);
-  //     })
-  //     .catch((err) => console.error(err));
-  // };
+  const getVehiclesProperties = () => {
+    const promises = vehicles.map((vehiclesProperties) => {
+      return fetch(
+        `https://www.swapi.tech/api/vehicles/${vehiclesProperties.uid}`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          return { ...data.result.properties, uid: vehiclesProperties.uid };
+        })
+        .catch((err) => console.error(err));
+    });
 
-  // const getVehiclesProperties = () => {
-  //   const vehiclesList = vehicles.map((vehiclesProperties) => {
-  //     return fetch(
-  //       `https://www.swapi.tech/api/people/${vehiclesProperties.uid}`
-  //     )
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         return { ...data.result.properties, uid: vehiclesProperties.uid };
-  //       })
-  //       .catch((err) => console.error(err));
-  //   });
+    Promise.all(promises).then((values) => {
+      setVehiclesProperties(values);
+    });
+  };
 
-  //   Promise.all(vehiclesList).then((values) => {
-  //     // console.log(values);
-  //     setVehiclesList(values);
-  //   });
-  // };
-  
+  const getPlanets = () => {
+    fetch("https://www.swapi.tech/api/planets")
+      .then((res) => res.json())
+      .then((data) => {
+        setPlanets(data.results);
+      })
+      .catch((err) => console.error(err));
+  };
+
+  const getPlanetsProperties = () => {
+    const promises = planets.map((planetsProperties) => {
+      return fetch(
+        `https://www.swapi.tech/api/planets/${planetsProperties.uid}`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          return { ...data.result.properties, uid: planetsProperties.uid };
+        })
+        .catch((err) => console.error(err));
+    });
+
+    Promise.all(promises).then((values) => {
+      setPlanetsProperties(values);
+    });
+  };
 
   useEffect(() => {
     getPeople();
-    // getPlanets();
-    // getVehicles();
+    getPlanets();
+    getVehicles();
   }, []);
 
   useEffect(() => {
     getPeopleProperties();
   }, [people]);
 
-  // useEffect(() => {
-  //   getPlanetsProperties();
-  // }, [planets]);
+  useEffect(() => {
+    getPlanetsProperties();
+  }, [planets]);
 
-  // useEffect(() => {
-  //   getVehiclesProperties();
-  // }, [vehicles]);
+  useEffect(() => {
+    getVehiclesProperties();
+  }, [vehicles]);
 
   return (
-    // <contexto.Provider value={{ peopleProperties, planetsProperties, vehiclesProperties }}>
-      <contexto.Provider value={{ peopleProperties }}>
+    <contexto.Provider
+      value={{
+        people,
+        peopleProperties,
+        vehicles,
+        vehiclesProperties,
+        planets,
+        planetsProperties,
+      }}
+    >
       {children}
     </contexto.Provider>
   );

@@ -7,49 +7,33 @@ import CardDetails from "../component/CardDetails.jsx";
 // import Button from "../component/Button.jsx";
 // import Films from "../component/Films.jsx";
 import Vehicles from "../component/Vehicles.jsx";
+import Planets from "../component/Planets.jsx";
 
 export const Home = () => {
   const {
     people,
     peopleProperties,
-    propertiesList,
-    // vehicles,
-    // vehiclesProperties,
-    // vehiclesList,
+    vehicles,
+    vehiclesProperties,
+    planets,
+    planetsProperties,
   } = useStore();
-  console.log("Esto es PropertiesList: ", propertiesList);
 
   return (
     <>
       <div className="card-container p-4">
         <h2>Characters</h2>
-        <Card people={people} peopleProperties={propertiesList} />
+        <Card people={people} peopleProperties={peopleProperties} />
+      </div>
+      <div className="card-container p-4">
+        <h2 className="p-4">Vehicles</h2>
+        <Vehicles vehicles={vehicles} vehiclesProperties={vehiclesProperties} />
       </div>
 
-      {/* <h2 className="p-4">Vehicles</h2>
-      {vehiclesList
-        ? vehiclesList.map((vehicles, index) => {
-            return <Vehicles vehicles={vehicles} />;
-          })
-        : null} */}
-
-      {/* <h2 className="p-4">Films</h2>
-      <Films /> */}
-
-      <h2 className="p-4">Characters Details</h2>
-      {/* <CardDetails peopleProperties={propertiesList} /> */}
-      {propertiesList
-        ? propertiesList.map((properties, index) => {
-            return <CardDetails key={index} properties={properties} />;
-          })
-        : null}
-
-      {/* <h2 className="p-4">Vehicles Details</h2>
-      {vehiclesList
-        ? vehiclesList.map((vehicles, index) => {
-            return <CardDetails key={index} vehicles={vehicles} />;
-          })
-        : null} */}
+      <div className="card-container p-4">
+        <h2 className="p-4">Planets</h2>
+        <Planets planets={planets} planetsProperties={planetsProperties} />
+      </div>
     </>
   );
 };

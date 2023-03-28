@@ -11,27 +11,27 @@ const CardDetails = ({ properties }) => {
                 </div>
                 <div className="col-md-8">
                     <div className="card-body">
-                        <h5 className="card-title">{properties.name}</h5>
+                        <b><h5 className="card-title">{properties.name}</h5></b>
                         <p className="card-text">Descripción</p>
                         <div className="container text-center div-red">
                             <div className="row p-2">
                                 <div className="col col-red">
-                                    <p>Name: </p><p>{properties.name}</p>
+                                    <p><b>Name:</b> </p><p>{properties.name}</p>
                                 </div>
                                 <div className="col">
-                                    <p>Birth Year: </p><p>{properties.birth_year}</p>
+                                    <p><b>Birth Year:</b> </p><p>{properties.birth_year}</p>
                                 </div>
                                 <div className="col">
-                                    <p>Gender: </p><p>{properties.gender}</p>
+                                    <p><b>Gender:</b> </p><p>{properties.gender}</p>
                                 </div>
                                 <div className="col">
-                                    <p>Height: </p><p>{properties.height}</p>
+                                    <p><b>Height:</b> </p><p>{properties.height}</p>
                                 </div>
                                 <div className="col">
-                                    <p>Skin Color: </p><p>{properties.skin_color}</p>
+                                    <p><b>Skin Color:</b> </p><p>{properties.skin_color}</p>
                                 </div>
                                 <div className="col">
-                                    <p>Eye Color: </p><p>{properties.eye_color}</p>
+                                    <p><b>Eye Color:</b> </p><p>{properties.eye_color}</p>
                                 </div>
                             </div>
                         </div>
