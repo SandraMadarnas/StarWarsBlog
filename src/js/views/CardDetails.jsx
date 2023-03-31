@@ -1,6 +1,19 @@
 import React from "react";
+import { useStore } from "../store/context";
+import { useParams } from "react-router";
 
-const CardDetails = ({ properties }) => {
+const CardDetails = () => {
+    const {
+        peopleProperties
+      } = useStore();
+
+      const params = useParams();
+      console.log(params);
+      console.log("PeopleProperties: ", peopleProperties);
+
+      const properties = peopleProperties.find((character) => {
+        return character.uid == params.idPeople
+      });
 
     return (
         <div className="card bg-dark p-4 mb-3">

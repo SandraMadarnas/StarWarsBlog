@@ -1,6 +1,6 @@
 import React from "react";
 
-import Button from "../component/Button.jsx";
+import Button from "./Actions.jsx";
 
 const Vehicles = ({ vehicles, vehiclesProperties }) => {
   return (

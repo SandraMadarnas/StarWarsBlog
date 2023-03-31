@@ -104,9 +104,14 @@ const ContextProvider = ({ children }) => {
     getVehiclesProperties();
   }, [vehicles]);
 
+  const store = {}
+
+  const actions = {}
+
   return (
     <contexto.Provider
       value={{
+        // { store, action }
         people,
         peopleProperties,
         vehicles,

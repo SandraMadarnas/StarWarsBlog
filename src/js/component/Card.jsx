@@ -1,6 +1,6 @@
 import React from "react";
 
-import Button from "../component/Button.jsx";
+import Actions from "./Actions.jsx";
 
 const Card = ({ people, peopleProperties }) => {
   return (
@@ -31,7 +31,7 @@ const Card = ({ people, peopleProperties }) => {
                     <b>Eye Color:</b> {peopleProperties[index].eye_color}
                   </p>
                 )}
-                <Button uid={person.uid} />
+                <Actions uid={person.uid} />
               </div>
             </div>
           );

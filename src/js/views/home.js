@@ -5,11 +5,12 @@ import "../../styles/home.css";
 
 import Loading from "../component/Loading.jsx";
 import Card from "../component/Card.jsx";
-import CardDetails from "../component/CardDetails.jsx";
+import CardDetails from "./CardDetails.jsx";
 // import Button from "../component/Button.jsx";
 // import Films from "../component/Films.jsx";
 import Vehicles from "../component/Vehicles.jsx";
 import Planets from "../component/Planets.jsx";
+import Actions from "../component/Actions.jsx";
 
 export const Home = () => {
   const {
@@ -26,7 +27,6 @@ export const Home = () => {
     {/* <Loading /> */}
       <div className="card-container p-4">
         <h2>Characters</h2>
-        
         <Card people={people} peopleProperties={peopleProperties} />
       </div>
       <div className="card-container p-4">

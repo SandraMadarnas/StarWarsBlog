@@ -3,11 +3,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import ContextProvider from "./store/context";
-import CardDetails from "./component/CardDetails.jsx";
+import CardDetails from "./views/CardDetails.jsx";
 
 import { Home } from "./views/home";
-import { Demo } from "./views/demo";
-import { Single } from "./views/single";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
@@ -25,9 +23,7 @@ const Layout = () => {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/card-details" element={<CardDetails />} />
-
-            <Route path="/details/:planets" element={<Single />} />
+            <Route path="/people/:idPeople" element={<CardDetails />} />
             <Route path="*" element={<h1>Not found!</h1>} />
           </Routes>
           <Footer />
