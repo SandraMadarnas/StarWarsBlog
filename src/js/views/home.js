@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useStore } from "../store/context";
 
 import "../../styles/home.css";
+
+import Loading from "../component/Loading.jsx";
 import Card from "../component/Card.jsx";
 import CardDetails from "../component/CardDetails.jsx";
 // import Button from "../component/Button.jsx";
@@ -21,8 +23,10 @@ export const Home = () => {
 
   return (
     <>
+    {/* <Loading /> */}
       <div className="card-container p-4">
         <h2>Characters</h2>
+        
         <Card people={people} peopleProperties={peopleProperties} />
       </div>
       <div className="card-container p-4">

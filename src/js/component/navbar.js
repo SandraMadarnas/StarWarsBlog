@@ -17,7 +17,7 @@ export const Navbar = () => {
               Home <i className="fas fa-home"></i>
             </button>
           </Link>
-          <Link to="/">
+          <Link to="/vehicles">
             <button className="btn btn-warning m-2">
               Vehicles <i className="fas fa-space-shuttle"></i>
             </button>
@@ -25,6 +25,11 @@ export const Navbar = () => {
           <Link to="/">
             <button className="btn btn-warning m-2">
               Planets <i className="fas fa-globe"></i>
+            </button>
+          </Link>
+          <Link to="/">
+            <button className="btn btn-warning m-2">
+              Films <i className="fas fa-video"></i>
             </button>
           </Link>
           <Link to="/demo">
