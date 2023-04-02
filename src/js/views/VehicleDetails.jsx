@@ -2,24 +2,24 @@ import React from "react";
 import { useStore } from "../store/context";
 import { useParams } from "react-router";
 
-const CardDetails = () => {
+const VehicleDetails = () => {
+    console.log(params);
+      
     const {
-        peopleProperties
-      } = useStore();
+        vehicleProperties
+    } = useStore();
 
-      const params = useParams();
-    //   console.log(params);
-    //   console.log("PeopleProperties: ", peopleProperties);
+    const params = useParams();
 
-      const properties = peopleProperties.find((character) => {
-        return character.uid == params.idPeople
-      });
+    const properties = vehicleProperties.find((vehicle) => {
+        return vehicle.uid == params.idVehicle
+    });
 
     return (
         <div className="card bg-dark p-4 mb-3">
             <div className="row g-0">
                 <div className="col-md-4">
-                    <img src={`https://starwars-visualguide.com/assets/img/characters/${properties.uid}.jpg`}
+                    <img src={`https://starwars-visualguide.com/assets/img/vehicles/${properties.uid}.jpg`}
                         className="img-fluid rounded-start" alt="#" />
                 </div>
                 <div className="col-md-8">
@@ -58,4 +58,4 @@ const CardDetails = () => {
 }
 
 
-export default CardDetails;
+export default VehicleDetails;

@@ -50,18 +50,19 @@ a:hover {
   margin: 10px;
   border-radius: 50px;
   font-size: 18px;
-  color: #708090;
+  /* color: #708090; */
+  background-color: black;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .btn-normal {
-  box-shadow: -3px -3px 7px #f5f5f5, 3px 3px 7px #bbc3cc;
+  box-shadow: -3px -3px 7px #fbff03, 3px 3px 7px #fbff03;
 }
 
 .btn-pressed {
-  box-shadow: -3px -3px 7px #f5f5f5 inset, 3px 3px 7px #bbc3cc inset;
+  box-shadow: -3px -3px 7px #fbff03 inset, 3px 3px 7px #fbff03 inset;
 }
 
 .btn-normal:active {
@@ -78,11 +79,29 @@ a:hover {
   padding: 0.5rem;
   font-size: 1.5rem;
   z-index: 10;
-  
 }
 
 .icon-button i:hover {
   color: red;
   background-color: #ffc107;
   font-size: 1.8rem;
+}
+
+.button {
+  z-index: 1;
+  margin: .5em;
+  margin-top: 15px;
+  font-size: 1rem;
+  padding: .2em .6em;
+  min-width: 2.4em;
+  min-height: 2.4em;
+  border-radius: 8.2em;
+  box-shadow: 0 3px 5px rgba(226, 230, 3, 0.5); 
+  outline: none;
+}
+
+.button:active {
+  box-shadow: -3px -3px 7px #f5f5f5 inset, 3px 3px 7px #bbc3cc inset;
+  font-size: 16px;
+  user-select: none;
 }

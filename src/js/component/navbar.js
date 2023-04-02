@@ -22,12 +22,12 @@ export const Navbar = () => {
               Vehicles <i className="fas fa-space-shuttle"></i>
             </button>
           </Link>
-          <Link to="/">
+          <Link to="/planets">
             <button className="btn btn-warning m-2">
               Planets <i className="fas fa-globe"></i>
             </button>
           </Link>
-          <Link to="/">
+          <Link to="/films">
             <button className="btn btn-warning m-2">
               Films <i className="fas fa-video"></i>
             </button>

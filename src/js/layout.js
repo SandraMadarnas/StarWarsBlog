@@ -4,9 +4,10 @@ import ScrollToTop from "./component/scrollToTop";
 
 import ContextProvider from "./store/context";
 import CardDetails from "./views/CardDetails.jsx";
+import VehicleDetails from "./views/VehicleDetails.jsx";
+import PlanetDetails from "./views/PlanetDetails.jsx";
 
 import { Home } from "./views/home";
-
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
@@ -24,6 +25,8 @@ const Layout = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/people/:idPeople" element={<CardDetails />} />
+            <Route path="/vehicle/:idVehicle" element={<VehicleDetails />} />
+            <Route path="/planet/:idPlanet" element={<PlanetDetails />} />
             <Route path="*" element={<h1>Not found!</h1>} />
           </Routes>
           <Footer />
