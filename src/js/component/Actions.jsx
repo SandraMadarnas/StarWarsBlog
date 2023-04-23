@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Actions = ({ uid }) => {
+const Actions = ({ type, uid }) => {
     return (
         <div className="d-flex">
-            <Link to={`/people/${uid}`} className="btn-wide btn-normal">
+            <Link to={`/${type}/${uid}`} className="btn-wide btn-normal">
                 Details
             </Link>
 

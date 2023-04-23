@@ -4,12 +4,12 @@ import { useParams } from "react-router";
 
 const PlanetDetails = () => {
     const {
-        planetProperties
+        planetsProperties
     } = useStore();
 
     const params = useParams();
 
-    const properties = planetProperties.find((planet) => {
+    const properties = planetsProperties.find((planet) => {
         return planet.uid == params.idPlanet
     });
 
@@ -17,32 +17,33 @@ const PlanetDetails = () => {
         <div className="card bg-dark p-4 mb-3">
             <div className="row g-0">
                 <div className="col-md-4">
-                    <img src={`https://starwars-visualguide.com/assets/img/planets/${properties.uid}.jpg`}
+                    <img src={properties.uid == 1 ? `https://custom.swcombine.com/static/8/632-large-1675095606.png`
+                        : `https://starwars-visualguide.com/assets/img/planets/${properties.uid}.jpg`}
                         className="img-fluid rounded-start" alt="#" />
                 </div>
                 <div className="col-md-8">
                     <div className="card-body">
-                        <b><h5 className="card-title">{properties.name}</h5></b>
-                        <p className="card-text">Descripción</p>
+                        <h1 className="card-title py-2">{properties.name}</h1>
+                        <h3 className="py-2">A planet of StarWars</h3>
                         <div className="container text-center div-red">
                             <div className="row p-2">
-                                <div className="col col-red">
+                                <div className="col custom-col">
                                     <p><b>Name:</b> </p><p>{properties.name}</p>
                                 </div>
-                                <div className="col">
-                                    <p><b>Birth Year:</b> </p><p>{properties.birth_year}</p>
+                                <div className="col custom-col">
+                                    <p><b>Climate:</b> </p><p>{properties.climate}</p>
                                 </div>
-                                <div className="col">
-                                    <p><b>Gender:</b> </p><p>{properties.gender}</p>
+                                <div className="col custom-col">
+                                    <p><b>Diameter:</b> </p><p>{properties.diameter}</p>
                                 </div>
-                                <div className="col">
-                                    <p><b>Height:</b> </p><p>{properties.height}</p>
+                                <div className="col custom-col">
+                                    <p><b>Population:</b> </p><p>{properties.population}</p>
                                 </div>
-                                <div className="col">
-                                    <p><b>Skin Color:</b> </p><p>{properties.skin_color}</p>
+                                <div className="col custom-col">
+                                    <p><b>Terrain:</b> </p><p>{properties.terrain}</p>
                                 </div>
-                                <div className="col">
-                                    <p><b>Eye Color:</b> </p><p>{properties.eye_color}</p>
+                                <div className="col custom-col">
+                                    <p><b>Gravity:</b> </p><p>{properties.gravity}</p>
                                 </div>
                             </div>
                         </div>

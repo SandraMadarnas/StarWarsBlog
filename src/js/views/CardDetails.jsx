@@ -24,26 +24,26 @@ const CardDetails = () => {
                 </div>
                 <div className="col-md-8">
                     <div className="card-body">
-                        <b><h5 className="card-title">{properties.name}</h5></b>
-                        <p className="card-text">Descripción</p>
-                        <div className="container text-center div-red">
+                        <h1 className="card-title py-2">{properties.name}</h1>
+                        <h3 className="py-2">A person within the Star Wars universe</h3>
+                        <div className="container p-2 text-center div-red">
                             <div className="row p-2">
-                                <div className="col col-red">
+                                <div className="col custom-col">
                                     <p><b>Name:</b> </p><p>{properties.name}</p>
                                 </div>
-                                <div className="col">
+                                <div className="col custom-col">
                                     <p><b>Birth Year:</b> </p><p>{properties.birth_year}</p>
                                 </div>
-                                <div className="col">
+                                <div className="col custom-col">
                                     <p><b>Gender:</b> </p><p>{properties.gender}</p>
                                 </div>
-                                <div className="col">
+                                <div className="col custom-col">
                                     <p><b>Height:</b> </p><p>{properties.height}</p>
                                 </div>
-                                <div className="col">
+                                <div className="col custom-col">
                                     <p><b>Skin Color:</b> </p><p>{properties.skin_color}</p>
                                 </div>
-                                <div className="col">
+                                <div className="col custom-col">
                                     <p><b>Eye Color:</b> </p><p>{properties.eye_color}</p>
                                 </div>
                             </div>

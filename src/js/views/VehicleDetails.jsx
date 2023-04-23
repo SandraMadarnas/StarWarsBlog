@@ -4,14 +4,14 @@ import { useParams } from "react-router";
 
 const VehicleDetails = () => {
     console.log(params);
-      
+
     const {
-        vehicleProperties
+        vehiclesProperties
     } = useStore();
 
     const params = useParams();
 
-    const properties = vehicleProperties.find((vehicle) => {
+    const properties = vehiclesProperties.find((vehicle) => {
         return vehicle.uid == params.idVehicle
     });
 
@@ -24,27 +24,27 @@ const VehicleDetails = () => {
                 </div>
                 <div className="col-md-8">
                     <div className="card-body">
-                        <b><h5 className="card-title">{properties.name}</h5></b>
-                        <p className="card-text">Descripción</p>
+                        <h1 className="card-title py-2">{properties.name}</h1>
+                        <h3 className="py-2">A vehicle of StarWars</h3>
                         <div className="container text-center div-red">
                             <div className="row p-2">
-                                <div className="col col-red">
+                                <div className="col custom-col">
                                     <p><b>Name:</b> </p><p>{properties.name}</p>
                                 </div>
-                                <div className="col">
-                                    <p><b>Birth Year:</b> </p><p>{properties.birth_year}</p>
+                                <div className="col custom-col">
+                                    <p><b>Passengers:</b> </p><p>{properties.passengers}</p>
                                 </div>
-                                <div className="col">
-                                    <p><b>Gender:</b> </p><p>{properties.gender}</p>
+                                <div className="col custom-col">
+                                    <p><b>Cargo Capacity:</b> </p><p>{properties.cargo_capacity}</p>
                                 </div>
-                                <div className="col">
-                                    <p><b>Height:</b> </p><p>{properties.height}</p>
+                                <div className="col custom-col">
+                                    <p><b>Consumables:</b> </p><p>{properties.consumables}</p>
                                 </div>
-                                <div className="col">
-                                    <p><b>Skin Color:</b> </p><p>{properties.skin_color}</p>
+                                <div className="col custom-col">
+                                    <p><b>Manufacturer:</b> </p><p>{properties.manufacturer}</p>
                                 </div>
-                                <div className="col">
-                                    <p><b>Eye Color:</b> </p><p>{properties.eye_color}</p>
+                                <div className="col custom-col">
+                                    <p><b>Length:</b> </p><p>{properties.length}</p>
                                 </div>
                             </div>
                         </div>

@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 export const Navbar = () => {
   return (
@@ -17,17 +18,17 @@ export const Navbar = () => {
               Home <i className="fas fa-home"></i>
             </button>
           </Link>
-          <Link to="/vehicles">
+          <Link to="vehicles">
             <button className="btn btn-warning m-2">
               Vehicles <i className="fas fa-space-shuttle"></i>
             </button>
           </Link>
-          <Link to="/planets">
+          <Link to="planets">
             <button className="btn btn-warning m-2">
               Planets <i className="fas fa-globe"></i>
             </button>
           </Link>
-          <Link to="/films">
+          <Link to="/demo">
             <button className="btn btn-warning m-2">
               Films <i className="fas fa-video"></i>
             </button>

@@ -1,6 +1,6 @@
 import React from "react";
 
-import Button from "./Actions.jsx";
+import Actions from "./Actions.jsx";
 
 const Vehicles = ({ vehicles, vehiclesProperties }) => {
   return (
@@ -30,7 +30,7 @@ const Vehicles = ({ vehicles, vehiclesProperties }) => {
                   Passengers: {vehiclesProperties[index].passengers}
                 </p>
               )}
-              <Button uid={vehicle.uid} />
+              <Actions type={"vehicle"} uid={vehicle.uid} />
             </div>
           </div>
         ))}

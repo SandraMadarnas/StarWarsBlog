@@ -1,6 +1,6 @@
 import React from "react";
 
-import Button from "./Actions.jsx";
+import Actions from "./Actions.jsx";
 
 const Planets = ({ planets, planetsProperties }) => {
   return (
@@ -8,10 +8,10 @@ const Planets = ({ planets, planetsProperties }) => {
       <div className="card-sw">
         {planets.map((planet, index) => (
           <div key={planet.uid} className="col m-2">
-            <img
-              src={`https://starwars-visualguide.com/assets/img/planets/${planet.uid}.jpg`}
+            <img src={planet.uid == 1 ? `https://custom.swcombine.com/static/8/632-large-1675095606.png` 
+            :`https://starwars-visualguide.com/assets/img/planets/${planet.uid}.jpg`}
               className="card-img-top"
-              alt="Imagen de StarWars-Vehicles"
+              alt="Imagen de StarWars-Planets"
             />
             <div className="card-body">
             <b><h5 className="card-title">{planet.name}</h5></b>
@@ -30,7 +30,7 @@ const Planets = ({ planets, planetsProperties }) => {
                   <b>Diameter:</b> {planetsProperties[index].diameter}
                 </p>
               )}
-              <Button uid={planet.uid} />
+              <Actions type={"planet"} uid={planet.uid} />
             </div>
           </div>
         ))}

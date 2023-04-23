@@ -38,9 +38,10 @@ a:hover {
   margin-bottom: 2vh;
 }
 
-.div-red {
-  color: red;
-  border-top: solid 3px red;
+.custom-col {
+  color: #ffc107;
+  background-color: #ffffff3c;
+  border-top: solid 5px #ffc107;
 }
 
 /* Button */

@@ -31,7 +31,7 @@ const Card = ({ people, peopleProperties }) => {
                     <b>Eye Color:</b> {peopleProperties[index].eye_color}
                   </p>
                 )}
-                <Actions uid={person.uid} />
+                <Actions type={"people"} uid={person.uid} />
               </div>
             </div>
           );
